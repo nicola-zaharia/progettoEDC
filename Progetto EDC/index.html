@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Planet School</title>
+    <link rel="icon" href="img/icon.svg">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Serif+Display:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <header>
+            <div>
+                <img class="logo" src="img/Vector.svg">
+            </div>
+            <h1>One Planet School</h1>
+        </header>
+        <div id="front">
+            <div>
+                <p><i>“La spazzatura è una grande risorsa nel posto sbagliato<br>a cui manca l'immaginazione di qualcuno<br>perché venga riciclata a beneficio di tutti.”</i><br><br>Mark Victor Hansen</p>
+            </div>
+        </div>
+        <div id="homepage">
+            <section id="section-rifiuti">
+                <div>
+                    <h2>Gestione dei rifiuti</h2>
+                    <button type="button" id="rifiuti-get-started"><span>Scopri di più</span></button>
+                </div>
+                <div> 
+                    <video loop autoplay height="100%" autoplay muted class="video" id="video-rifiuti">
+                        <source src="video/video-rifiuti.webm" type="video/webm">
+                    </video>
+                </div>
+            </section>  
+            <section id="section-ecosistemi">
+                <div>
+                    <h2>Ecosistemi</h2>
+                    <button type="button" id="ecosistemi-get-started"><span>Scopri di più</span></button>
+                </div>
+                <div> 
+                    <video loop autoplay height="100%" autoplay muted class="video" id="video-ecosistemi">
+                        <source src="video/video-ecosistema.webm" type="video/webm">
+                    </video>
+                </div>
+            </section>
+        </div>
+        <div id="decomposizione">  
+            <h2>Tempi di decomposizione dei rifiuti</h2>
+            <div id="timeline"></div>
+            <div>
+                <input type="button" class="home" value="Torna alla home">
+                <input type="button" id="go-rifiuti-game" value="Vai al quiz">
+            </div>
+        </div>
+        <div id="rifiuti-game">
+            <h3 id="rifiuti-game-title">Quiz sulle tue conoscenze</h3>
+            <form action="actionpage.php" id="quiz-rifiuti">
+                <label id="question"></label>
+                <label></label>
+                <input type="radio" id="answer0" name="answer" value="risposta">
+                <label></label>
+                <input type="radio" id="answer1" name="answer" value="risposta">
+                <label></label>
+                <input type="radio" id="answer2" name="answer" value="risposta">
+                <label></label>
+                <input type="radio" id="answer3" name="answer" value="risposta">
+            </form>
+            <input type="button" id="submit" value="Avanti">
+            <div id="progress-bar">
+                <div id="progress-content"></div>
+            </div>
+            <input type="button" class="home" value="Torna alla home">
+            <div id="popup">
+                <div>
+                    <h2 id="titolo">Attenzione! La tua risposta è sbagliata</h2>
+                    <p id="close">&#x2715</p>
+                </div>
+                <p id="spiegazione"></p>
+            </div>
+            <div id="game-score">
+                <h2>Il tuo risultato: </h2>
+            </div>
+        </div>
+        <div id="ecosistemi-cards">
+            <h3>Ecosistemi in a nutshell</h3>
+            <div id="cards-container">
+                <div id="first-row"></div>
+                <div id="second-row"></div>
+                <div id="third-row"></div>
+            </div>
+            <input type="button" class="home" value="Torna alla home">
+        </div>
+        <footer>
+            <div>
+                <img class="logo" src="img/Vector.svg">
+            </div>
+            <div>
+                <p> <a href="https://www.itis.pr.it/" class="underline">© ITIS 2022 </a> / <a href="mailto:snicola.zaharia@itis.pr.it" class="underline"> Nicola Zaharia </a> - <a href="mailto:slaura.marzo@itis.pr.it" class="underline"> Laura Marzo </a></p>
+            </div>
+            <div>
+                <svg id="backToTop" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" fill="#FFFFFF"><g><rect fill="none"/></g><g><g><polygon points="6,17.59 7.41,19 12,14.42 16.59,19 18,17.59 12,11.59"/><polygon points="6,11 7.41,12.41 12,7.83 16.59,12.41 18,11 12,5"/></g></g></svg>
+            </div>
+        </footer>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

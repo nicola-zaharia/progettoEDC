@@ -1,0 +1,554 @@
+html{
+    scroll-behavior: smooth;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    background-color: #5a7a6b;
+    height: 100vh;
+    cursor: default;
+    overflow-x: hidden;
+}
+h1, h2, h3, [type = "button"] {
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 1px;
+    color: #F5F3F1;
+}
+p, label {
+    font-family: 'Noto Serif Display', serif;
+    color: #F5F3F1;
+}
+header {
+    display: flex;
+    flex-direction: row;
+    background-color: #C0B19B;
+    border-bottom: 3px solid #F5F3F1;
+    width: 100%;
+    height: 150px;
+    align-items: center;
+}
+.logo {
+    width: 100%;
+    height: 80%;
+    transition: 0.5s;
+}
+.logo:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+header > div {
+    width: 25%;
+    height: 100%;
+    border-right: 3px solid #F5F3F1;
+    display: flex;
+    align-items: center;
+}
+header > h1 {
+    font-size: 4vw;
+    color: #F5F3F1;
+    width: 75%;
+    margin-left: 8%;
+}
+footer {
+    display: flex;
+    flex-direction: row;
+    background-color: #C0B19B;
+    border-top: 3px solid #F5F3F1;
+    width: 100%;
+    height: 150px;
+    align-items: center;
+
+}
+footer > div:first-child {
+    width: 23%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+footer > div:nth-child(2) {
+    width: 54%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+footer > div:nth-child(2) > p {
+    font-size: 1.1vw;
+    color: #F5F3F1; 
+}
+footer > div:last-child {
+    width: 23%;
+    height: 100%;
+    border-left:  3px solid #F5F3F1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer > div:last-child > svg {
+    width: 5vh;
+    height: 5vh;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+footer > div:last-child > svg:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+#front {
+    width: 100%;
+    height: 794px;
+    background-image: url("img/serpente.jfif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.7;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    transition: 1s;
+}
+#front:hover{
+    opacity: 0.8;
+}
+#front > div {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: 1s;
+}
+#front > div > p {
+    color: #F5F3F1;
+    font-size: 1.2vw;
+    position: absolute;
+    top: 80%;
+    left: 40%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+}
+#front:hover > div{
+    width: 50%;
+}
+#homepage {
+    background-color: #5a7a6b;
+    height: 1200px;
+    display: flex;
+    flex-direction: column;
+}
+#section-rifiuti, #section-ecosistemi {
+    height: 600px;
+    display: flex;
+    flex-direction: row;
+    background-color: #C0B19B;
+    border-top: 3px solid #F5F3F1;
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: .7s ease;
+}
+
+#section-rifiuti.active, #section-ecosistemi.active{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#section-rifiuti h2, #section-ecosistemi h2 {
+    font-size: 4vw;
+}
+#section-ecosistemi {
+    flex-direction: row-reverse;
+    background-color: #5a7a6b;
+}
+#section-rifiuti > div:first-child, #section-ecosistemi > div:first-child {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#section-rifiuti > div:last-child, #section-ecosistemi > div:first-child {
+    border-left: 3px solid #F5F3F1;
+}
+#rifiuti-get-started span, #ecosistemi-get-started span{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+#rifiuti-get-started span:after, #ecosistemi-get-started span:after{
+    content: '>';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+#rifiuti-get-started:hover span, #ecosistemi-get-started:hover span{
+    padding-right: 25px;
+}
+#rifiuti-get-started:hover span:after, #ecosistemi-get-started:hover span:after{
+    opacity: 1;
+    right: 0;
+}
+#timeline {
+    width: 1200px;
+    height: 600px;
+    overflow: auto;
+    margin: 50px auto;
+    flex-direction: column;
+
+}
+#decomposizione > h2, #rifiuti-game > h3, #rifiuti-article > h2 {
+    font-size: 3vw;
+    margin: 20px 0;
+    color: #F5F3F1;
+}
+#decomposizione {
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    margin-bottom: 50px;
+}
+/*
+#rifiuti-article {
+    display: grid;
+}
+*/
+#timeline p {
+    color: #F5F3F1;
+}
+#timeline::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 600px;
+    background-color: #F5F3F1;
+    top: 35.8%;
+    bottom: 0;
+    left: 49.9%;
+}
+.container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+.container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -3%;
+    background-color: #F5F3F1;
+    border: 4px solid #C0B19B;
+    top: 10%;
+    border-radius: 50%;
+    z-index: 1;
+}
+.left {
+    left: 0;
+}
+.right {
+    left: 50%;
+}
+.left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 15.5%;
+    width: 0;
+    z-index: 1;
+    right: 5%;
+    border: medium solid #C0B19B;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #C0B19B;
+}
+.right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 15.5%;
+    width: 0;
+    z-index: 1;
+    left: 5.1%;
+    border: medium solid #C0B19B;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #C0B19B transparent transparent;
+}
+.right::after {
+    left: -2.7%;
+}
+.content {
+    padding: 20px 30px;
+    background-color: #C0B19B;
+    position: relative;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 0;
+}
+#timeline::-webkit-scrollbar {
+    width: 1em;
+}
+#timeline::-webkit-scrollbar-thumb {
+    background: #C0B19B;
+    transform: 0.3s;
+}
+#timeline::-webkit-scrollbar-thumb:hover {
+    background: #ccc2b4;
+}
+body::-webkit-scrollbar {
+    width: 1em;
+}
+body::-webkit-scrollbar-thumb {
+    background: #C0B19B;
+    transform: 0.3s;
+}
+body::-webkit-scrollbar-thumb:hover {
+    background: #ccc2b4;
+}
+[type = "button"] {
+    width: 180px;
+    height: 45px;
+    font-size: 22px;
+    background-color: inherit;
+    border: 2px solid #F5F3F1;
+    border-radius: 5px;
+    color: #F5F3F1;
+    margin: 0 15px;
+}
+[type = "button"]:hover {
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+[type = "radio"] {
+	appearance: none;
+	width: 15px;
+	height: 15px;
+	border: 2px solid #F5F3F1;
+	border-radius: 50%;
+	background-clip: content-box;
+	padding: 3px;
+    cursor: pointer;
+}
+[type = "radio"]:checked {
+	background-color: #C0B19B;
+    transition: 0.5s;
+}
+#rifiuti-game {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 84vh;
+}
+#rifiuti-game form {
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    align-items: flex-start;
+}
+#rifiuti-game form label {
+    margin: 0 20px;
+    position: relative;
+    top: 19px;
+}
+#question {
+    font-size: 1.5vw;
+    top: -20px !important;
+}
+#progress-bar {
+    width: 50%;
+    height: 25px;
+    border-radius: 15px;
+    background-color: #F5F3F1;
+    margin: 4% 0;
+}
+#progress-content {
+    width: 0%;
+    height: 100%;
+    border-radius: 15px;
+    background-color: #C0B19B;
+    transition: 1s;
+}
+::-moz-selection {
+    background: #F5F3F1;
+    color: #C0B19B;
+}
+::selection {
+    background: #F5F3F1;
+    color: #C0B19B;
+}
+#popup {
+    display: none;
+    background-color: #C0B19B;
+    border-radius: 15px;
+    max-width: 600px;
+    min-height: 300px;
+    z-index: 2;
+    flex-direction: column;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
+                0 2px 4px rgba(0,0,0,0.07), 
+                0 4px 8px rgba(0,0,0,0.07), 
+                0 8px 16px rgba(0,0,0,0.07),
+                0 16px 32px rgba(0,0,0,0.07), 
+                0 32px 64px rgba(0,0,0,0.07);
+    position: absolute;
+    top: 35%;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 1s;
+    animation-name: animatetop;
+    animation-duration: 1s
+}
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:100; opacity:1}
+}
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:100; opacity:1}   
+}
+#popup div h2, #popup div p, #spiegazione {
+    margin: 5%;
+}
+#spiegazione {
+    margin-top: 0;
+}
+#popup div {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: baseline;
+}
+#close {
+    transition: 0.2s;
+    font-size: 20px;
+}
+#close:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+#game-score {
+    display: none;
+    font-size: 1.5vw;
+    position: absolute;
+    margin-bottom: 3%;
+}
+a {
+   text-decoration: none;
+    color: #F5F3F1;
+    transition: .6s;
+}
+a:hover{
+    opacity: .8;
+}
+.underline {
+    position: relative;
+}
+.underline::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background-color: #F5F3F1;
+    transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+@media (hover: hover) and (pointer: fine) {
+    .underline:hover::before {
+        left: 0;
+        right: auto;
+        width: 100%;
+    }
+}
+#ecosistemi-cards {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#ecosistemi-cards > h3 {
+    font-size: 3vw;
+    margin: 20px 0;
+}
+#cards-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 50%;
+   height: 50%;
+   background-color: none;
+}
+#first-row, #second-row, #third-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 40px;
+}                                                           
+.flip-card{
+    background-color: transparent;
+    width: 350px;
+    height: 450px;
+    perspective: 1000px;
+    padding: 20px;
+}
+.flip-card:hover .card{
+    transform: rotateY(180deg);
+}
+.card-front, .card-text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 5px;
+}
+.card-front {
+    background-color:  #C0B19B;
+    color: black;
+}
+.card-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5%;
+}
+.card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 1s ease-out;
+    transform-style: preserve-3d;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+.card img {
+    width: 90%;
+    margin-top: 4%; 
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.card-text {
+    background-color: #C0B19B;
+    color: white;
+    transform: rotateY(180deg);
+}
+#ecosistemi-cards input {
+    margin-bottom: 3vh;
+}
